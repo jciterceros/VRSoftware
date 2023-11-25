@@ -13,7 +13,8 @@ public class Endereco {
     public Endereco() {
     }
 
-    public Endereco(Integer id,String rua, Integer numero, String bairro, String cep, String cidade, String estado, String pais) {
+    public Endereco(Integer id, String rua, Integer numero, String bairro, String cep, String cidade, String estado,
+            String pais) {
         this.id = id;
         this.rua = rua;
         this.numero = numero;
@@ -117,7 +118,7 @@ public class Endereco {
     }
 
     public String mostrarDados() {
-        return String.format("id: %d\n" 
+        return String.format("id: %d\n"
                 + "Rua: %s\n"
                 + "Numero: %d\n"
                 + "Bairro: %s\n"
@@ -133,5 +134,5 @@ public class Endereco {
                 this.cidade,
                 this.estado,
                 this.pais);
-    }    
+    }
 }

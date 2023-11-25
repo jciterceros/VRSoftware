@@ -5,11 +5,26 @@ import java.util.Scanner;
 public class CadastroUsuarioPOO {
 
     private static final Integer Limite = 5;
-
+    /*
+     * 
+     * 1 - Cadastrar pessoa
+     * 2 - Listar pessoas
+     * 3 - Atualizar dados da pessoa
+     * 4 - Excluir pessoa
+     * 5 - Cadastrar endereco
+     * 6 - Listar enderecos
+     * 7 - Atualizar dados do endereco
+     * 8 - Excluir endereco
+     * 0 - Sair
+     */
     private static final int CADASTRAR_PESSOA = 1;
     private static final int LISTAR_PESSOA = 2;
-    private static final int CADASTRAR_ENDERECO = 3;
-    private static final int LISTAR_ENDERECO = 4;
+    private static final int ATUALIZAR_PESSOA = 3;
+    private static final int EXCLUIR_PESSOA = 4;
+    private static final int CADASTRAR_ENDERECO = 5;
+    private static final int LISTAR_ENDERECO = 6;
+    private static final int ATUALIZAR_ENDERECO = 7;
+    private static final int EXCLUIR_ENDERECO = 8;
     private static final int SAIR = 0;
 
     public static void main(String[] args) {
@@ -35,7 +50,53 @@ public class CadastroUsuarioPOO {
                 case LISTAR_PESSOA:
                     for (int i = 0; i < cadastroPessoas.length; i++) {
                         if (cadastroPessoas[i] != null) {
-                            System.out.println(cadastroPessoas[i].mostrarDados());
+                            // System.out.println(cadastroPessoas[i].mostrarDados());
+                            System.out.println(cadastroPessoas[i].toString());
+                        }
+                    }
+                    break;
+
+                case ATUALIZAR_PESSOA:
+                    for (int i = 0; i < cadastroPessoas.length; i++) {
+                        if (cadastroPessoas[i] != null) {
+                            System.out.println(cadastroPessoas[i].toString());
+                        }
+                    }
+                    System.out.println("Digite o id da pessoa que deseja atualizar: ");
+                    Integer idPessoa = entrada.nextInt();
+
+                    for (int i = 0; i < cadastroPessoas.length; i++) {
+                        if (cadastroPessoas[i] != null && cadastroPessoas[i].getId() == idPessoa) {
+
+                            System.out.println("Qual dado deseja atualizar?");
+                            Funcoes.menuAtualizarPessoa();
+
+                            Integer opcaoAtualizar = entrada.nextInt();
+                            switch (opcaoAtualizar) {
+                                case 1:
+                                    System.out.println("Digite o nome da pessoa: ");
+                                    cadastroPessoas[idPessoa].setNome(entrada.next());
+                                    break;
+                                case 2:
+                                    System.out.println("Digite a idade da pessoa: ");
+                                    cadastroPessoas[idPessoa].setIdade(entrada.nextInt());
+                                    break;
+                                case 3:
+                                    System.out.println("Digite o sexo da pessoa: ");
+                                    cadastroPessoas[idPessoa].setSexo(entrada.next().charAt(0));
+                                    break;
+                                case 4:
+                                    System.out.println("Digite a cidade da pessoa: ");
+                                    cadastroPessoas[idPessoa].setCidade(entrada.next());
+                                    break;
+                                case 5:
+                                    System.out.println("Digite a altura da pessoa: ");
+                                    cadastroPessoas[idPessoa].setAltura(entrada.nextDouble());
+                                    break;
+                                default:
+                                    System.out.println("Opcao invalida");
+                                    break;
+                            }
                         }
                     }
                     break;

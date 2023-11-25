@@ -5,11 +5,24 @@ import java.util.Scanner;
 public class Funcoes {
 
     public static void menu() {
-        System.out.println("1 - Cadastrar pessoa");
-        System.out.println("2 - Listar pessoas");
-        System.out.println("3 - Cadastrar endereco");
-        System.out.println("4 - Listar enderecos");
+        System.out.println("1 - Cadastrar pessoa"); // CREATE
+        System.out.println("2 - Listar pessoas"); // READ
+        System.out.println("3 - Atualizar dados da pessoa"); // UPDATE
+        System.out.println("4 - Excluir pessoa"); // DELETE
+
+        System.out.println("5 - Cadastrar endereco"); // CREATE
+        System.out.println("6 - Listar enderecos"); // READ
+        System.out.println("7 - Atualizar dados do endereco"); // UPDATE
+        System.out.println("8 - Excluir endereco"); // DELETE
         System.out.println("0 - Sair");
+    }
+
+    public static void menuAtualizarPessoa() {
+        System.out.println("1 - Nome");
+        System.out.println("2 - Idade");
+        System.out.println("3 - Sexo");
+        System.out.println("4 - Cidade");
+        System.out.println("5 - Altura");
     }
 
     public static Pessoa cadastrarPessoa(Pessoa pessoa, Scanner teclado) {

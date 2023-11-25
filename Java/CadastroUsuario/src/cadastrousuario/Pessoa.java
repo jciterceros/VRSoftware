@@ -70,7 +70,15 @@ public class Pessoa {
     }
 
     public String mostrarDados() {
-        return String.format("Id: %d\nNome: %s\nIdade: %d\nSexo: %c\nCidade: %s\nAltura: %.2f",id, nome, idade, sexo, cidade,
+        return String.format("Id: %d\nNome: %s\nIdade: %d\nSexo: %c\nCidade: %s\nAltura: %.2f", id, nome, idade, sexo,
+                cidade,
                 altura);
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa [id=" + id + ", nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + ", cidade=" + cidade
+                + ", altura=" + altura + "]";
+    }
+
 }
