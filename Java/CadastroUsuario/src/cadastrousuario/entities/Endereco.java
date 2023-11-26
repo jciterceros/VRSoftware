@@ -1,4 +1,4 @@
-package cadastrousuario;
+package cadastrousuario.entities;
 
 public class Endereco {
     private Integer id;
@@ -117,22 +117,9 @@ public class Endereco {
         }
     }
 
-    public String mostrarDados() {
-        return String.format("id: %d\n"
-                + "Rua: %s\n"
-                + "Numero: %d\n"
-                + "Bairro: %s\n"
-                + "CEP: %s\n"
-                + "Cidade: %s\n"
-                + "Estado: %s\n"
-                + "Pais: %s\n",
-                this.id,
-                this.rua,
-                this.numero,
-                this.bairro,
-                this.cep,
-                this.cidade,
-                this.estado,
-                this.pais);
+    @Override
+    public String toString() {
+        return "Endereco [id=" + id + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cep=" + cep
+                + ", cidade=" + cidade + ", estado=" + estado + ", pais=" + pais + "]";
     }
 }

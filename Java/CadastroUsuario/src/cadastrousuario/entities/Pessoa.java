@@ -1,4 +1,4 @@
-package cadastrousuario;
+package cadastrousuario.entities;
 
 public class Pessoa {
 
@@ -8,17 +8,19 @@ public class Pessoa {
     private char sexo;
     private String cidade;
     private Double altura;
+    private Endereco endereco;
 
     public Pessoa() {
     }
 
-    public Pessoa(Integer id, String nome, Integer idade, char sexo, String cidade, Double altura) {
+    public Pessoa(Integer id, String nome, Integer idade, char sexo, String cidade, Double altura, Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.sexo = sexo;
         this.cidade = cidade;
         this.altura = altura;
+        this.endereco = endereco;
     }
 
     public Integer getId() {
@@ -69,16 +71,17 @@ public class Pessoa {
         this.altura = altura;
     }
 
-    public String mostrarDados() {
-        return String.format("Id: %d\nNome: %s\nIdade: %d\nSexo: %c\nCidade: %s\nAltura: %.2f", id, nome, idade, sexo,
-                cidade,
-                altura);
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     @Override
     public String toString() {
         return "Pessoa [id=" + id + ", nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + ", cidade=" + cidade
-                + ", altura=" + altura + "]";
+                + ", altura=" + altura + ", endereco=" + endereco + "]";
     }
-
 }

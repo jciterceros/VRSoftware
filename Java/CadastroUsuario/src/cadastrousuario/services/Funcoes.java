@@ -1,28 +1,44 @@
-package cadastrousuario;
+package cadastrousuario.services;
 
+import cadastrousuario.entities.Endereco;
+import cadastrousuario.entities.Pessoa;
 import java.util.Scanner;
 
 public class Funcoes {
 
     public static void menu() {
-        System.out.println("1 - Cadastrar pessoa"); // CREATE
-        System.out.println("2 - Listar pessoas"); // READ
-        System.out.println("3 - Atualizar dados da pessoa"); // UPDATE
-        System.out.println("4 - Excluir pessoa"); // DELETE
+        System.out.println("\nSistema de cadastros");
+        System.out.println("1 - Cadastrar pessoa");
+        System.out.println("2 - Listar pessoas");
+        System.out.println("3 - Atualizar dados da pessoa");
+        System.out.println("4 - Excluir pessoa");
 
-        System.out.println("5 - Cadastrar endereco"); // CREATE
-        System.out.println("6 - Listar enderecos"); // READ
-        System.out.println("7 - Atualizar dados do endereco"); // UPDATE
-        System.out.println("8 - Excluir endereco"); // DELETE
+        System.out.println("5 - Cadastrar endereco");
+        System.out.println("6 - Listar enderecos");
+        System.out.println("7 - Atualizar dados do endereco");
+        System.out.println("8 - Excluir endereco");
         System.out.println("0 - Sair");
     }
 
     public static void menuAtualizarPessoa() {
+        System.out.println("Qual dado deseja atualizar?");
         System.out.println("1 - Nome");
         System.out.println("2 - Idade");
         System.out.println("3 - Sexo");
         System.out.println("4 - Cidade");
         System.out.println("5 - Altura");
+        System.out.println("6 - Endereco");
+    }
+
+    public static void menuAtualizarEndereco() {
+        System.out.println("Qual dado deseja atualizar?");
+        System.out.println("1 - Rua");
+        System.out.println("2 - Numero");
+        System.out.println("3 - Bairro");
+        System.out.println("4 - CEP");
+        System.out.println("5 - Cidade");
+        System.out.println("6 - Estado");
+        System.out.println("7 - Pais");
     }
 
     public static Pessoa cadastrarPessoa(Pessoa pessoa, Scanner teclado) {
